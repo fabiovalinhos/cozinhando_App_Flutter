@@ -17,7 +17,8 @@ class Detalhes extends StatelessWidget {
         children: <Widget>[
           _construirImagemDetalhe(receita.foto),
           _construiTituloDetalhes(receita.titulo),
-          _construirLinhaIconesDetalhes( quantidadePorcoesTernario(), receita.tempoPreparo),
+          _construirLinhaIconesDetalhes(
+              quantidadePorcoesTernario(), receita.tempoPreparo),
           _construirSubtituloDetalhes('Ingredientes'),
           _contruirTextoDetalhes(receita.ingredientes),
           _construirSubtituloDetalhes('Modo de Preparo'),
@@ -29,8 +30,9 @@ class Detalhes extends StatelessWidget {
   }
 
   String quantidadePorcoesTernario() {
-    return (receita.porcoes != '1' && receita.porcoes != '0') ?
-            '${receita.porcoes} porções' : '${receita.porcoes} porção';
+    return (receita.porcoes != '1' && receita.porcoes != '0')
+        ? '${receita.porcoes} porções'
+        : '${receita.porcoes} porção';
   }
 
   Widget _construirImagemDetalhe(imagem) {
